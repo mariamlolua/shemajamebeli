@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>why?</title>
+    <link rel="stylesheet" href="js.css">
+</head>
+<body>
+    <h1>airchie raodenoba</h1>
+    <input id="chawere" type="number">
+    <button id="daachire" onclick="Shemowmeba()">shemowmeba</button>
+    <div id="divv">
+        <p id="ps"></p>
+    </div>
+    <h1> sheni shercheuli chamonatvali</h1>
+    <div class="three">
+        <p id="pss1"> </p>
+    </div>
+    <div class="three">
+        <p id="pss2"></p>
+    </div>
+    <div class="three">
+        <p id="pss3"></p>
+    </div>
+    <button id="Button1" onclick="func1()">yidva</button>
+    <button id="Button2" onclick="func2()">yidva</button>
+    <button id="Button3" onclick="func3()">yidva</button>
+
+    <script>
+ function Shemowmeba(){
+
+            const message = document.getElementById("ps");
+            message.innerHTML = "";
+            let mnishvneloba = document.getElementById("chawere").value;
+
+            try{
+                if(mnishvneloba == "") throw "chawere rame kaco!";
+                if (mnishvneloba < 1) throw "naklebia 1ze";
+                if (mnishvneloba > 3) throw "metia 3ze";
+                if(mnishvneloba <= 3 && mnishvneloba >= 1 )throw "sagho bro"
+            }
+            catch (error) {
+                message.innerHTML = error;
+            }
+            finally{
+                document.getElementById("chawere").value ="";
+            }
+        }
+    </script>
+
+    <script>
+             let productData = '{"produqtebi":[' +
+    '{"dasaxeleba":"მაგიდა","fasi":"1200" },' +
+    '{"dasaxeleba":"ტელევიზორი","fasi":"1500" },' +
+    '{"dasaxeleba":"მაცივარი","fasi":"1100" },'+
+    '{"dasaxeleba":"გაზქურა","fasi":"700" },'+
+    '{"dasaxeleba":"ლეპტოპი","fasi":"2000" }]}';
+
+     const obj = JSON.parse(productData);
+        function func1(){
+     document.getElementById("pss1").innerHTML =  " Product: " + obj.produqtebi[1].dasaxeleba + " " + obj.produqtebi[1].fasi;
+        }
+        function func2(){
+            document.getElementById("pss2").innerHTML =  " Product: " + obj.produqtebi[4].dasaxeleba + " " + obj.produqtebi[4].fasi;
+        }
+        function func3(){
+            document.getElementById("pss3").innerHTML =  " Product: " + obj.produqtebi[3].dasaxeleba + " " + obj.produqtebi[3].fasi;
+        }
+     
+    </script>
+
+
+
+
+
+</body>
+</html>
